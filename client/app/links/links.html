@@ -1,0 +1,11 @@
+<div id='container' ng-controller="LinksController">
+  <!-- Your html here -->
+  <!-- <a href="#/links">Links</a> | <a href="#/shorten">Shorten</a> -->
+  <h1>Links:</h1>
+  <form>
+    <input placeholder="filter..." ng-model="filter">
+  </form>
+  <ul ng-repeat="link in data.links | filter: filter | orderBy: 'title'">
+    <li class='link'><div>{{link.title}} <p class='original'>{{link.url}}</p><a href="http://localhost:3000/api/links/{{link.code}}">{{link.base_url}}/{{link.code}}</div><div>Visits: {{link.visits}}</div></li>
+  </ul>
+</div>

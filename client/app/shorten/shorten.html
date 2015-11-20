@@ -1,0 +1,15 @@
+<div id='container' ng-controller="ShortenController">
+<!-- Your code here -->
+<!-- <a href="#/links">Links</a> | <a href="#/shorten">Shorten</a> -->
+<form name="addForm" novalidate ng-submit="addLink()">
+  <!-- INPUT for new link -->
+  <input name="addy" type="url" ng-model="link.url" required>
+  <!-- SUBMIT for new link -->
+  <button type="submit" ng-disabled="addForm.$invalid">Add Link</button>
+  <div ng-if="addForm.addy.$dirty && addForm.addy.$error.url">Invalid URL</div>
+  <div ng-if="addForm.addy.$dirty && addForm.addy.$error.required">URL required</div>
+</form>
+<img ng-if="loading" src="../../assets/spiffygif_46x46.gif">
+</div>
+
+

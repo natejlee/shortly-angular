@@ -1,0 +1,11 @@
+<div id='signin'>
+  <h1>signin</h1>
+  <form name="signinForm" ng-submit='signin()' novalidate>
+    <input name="nickname" type='text' ng-model='user.username' required>
+    <div ng-if="signinForm.nickname.$dirty && signinForm.nickname.$error.required">Username required</div>
+    <input name="password" type="password" ng-model='user.password' required>
+    <div ng-if="signinForm.password.$dirty && signinForm.password.$error.required">Password required</div>
+    <button ng-disabled="signinForm.$invalid">signin</button>
+  </form>
+  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+</div>
